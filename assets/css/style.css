@@ -1,0 +1,197 @@
+/* Typography */
+
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap");
+
+body.light {
+  --mainThemeColor: #cc3b35;
+  --headerText: #ffffff;
+  --mainTextColor: #222;
+  --mainBgColor: white;
+  --padding: 1rem;
+  --paddingLg: 2rem;
+}
+
+body.dark {
+  --mainThemeColor: #280b0a;
+  --headerText: #ffffff;
+  --mainTextColor: #efb6b6;
+  --mainBgColor: rgb(43, 9, 9);
+  --padding: 1rem;
+  --paddingLg: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Frank Ruhl Libre", serif;
+  line-height: 130%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+}
+
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto var(--padding) auto;
+}
+
+/* header */
+header {
+  color: var(--headerText);
+  background: var(--mainThemeColor);
+  border-bottom: 3px solid var(--mainThemeColor);
+  padding: var(--padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.fork {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+header img {
+  width: 150px;
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 0;
+}
+
+header a {
+  /* font-weight: bold; */
+  display: block;
+  padding: 0 var(--padding);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--headerText);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+header a::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: white;
+  bottom: 0px;
+  left: 20%;
+  width: 60%;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(100%);
+}
+
+header a:hover::after {
+  transform: translateY(0%);
+}
+
+.headerText h1 {
+  font-size: clamp(20px, 6vw, 150px);
+  margin-bottom: 0;
+  max-width: 60vw;
+}
+
+.headerText p {
+  margin-top: 0;
+  max-width: 50vw;
+  font-size: clamp(14px, 2vw, 20px);
+  padding-bottom: 10vw;
+}
+
+.toggleColormode {
+  cursor: pointer;
+}
+
+/* Main */
+
+main {
+  color: var(--mainTextColor);
+  background: var(--mainBgColor);
+}
+
+main h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 0;
+}
+
+main h2 span {
+  color: var(--mainThemeColor);
+}
+
+main .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--paddingLg);
+  padding: var(--paddingLg);
+}
+
+main article {
+  margin-bottom: var(--paddingLg);
+}
+
+main img {
+  max-width: 100%;
+}
+
+.img-box {
+  position: relative;
+}
+
+.article-overlay {
+  font-family: "Poiret One", cursive;
+  position: absolute;
+  bottom: 15px;
+  left: -25px;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 670px) {
+  .topHeader {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  nav li {
+    width: 30%;
+  }
+}
